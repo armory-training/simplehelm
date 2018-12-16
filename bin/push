@@ -3,5 +3,5 @@
 aws --profile armory-ps-prod s3 cp simplehelm-${BRANCH_NAME}-${GIT_HASH}.tgz s3://armory-helm-repo/
 
 cat << EOF > build.properties
-FILEPATH=s3://armory-helm-repo/simplehelm-${BRANCH_NAME}-${GIT_HASH}.tgz
+filename=simplehelm-${BRANCH_NAME}-${GIT_HASH}.tgz
 EOF
