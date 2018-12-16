@@ -1,0 +1,2 @@
+#!/bin/bash
+tar cvjf simplehelm-${BRANCH_NAME}-${GIT_HASH}.tgz -C chart/ .
