@@ -14,6 +14,7 @@ pipeline {
         when { branch 'master' }
         steps {
          sh '''#!/bin/bash +x
+           source bin/env
            . /mnt/secrets/bintray/bintray
            AWS_ACCESS_KEY=$(aws --profile armory-ps-prod configure get aws_access_key_id) \
            AWS_SECRET_KEY=$(aws --profile armory-ps-prod configure get aws_secret_access_key) \
