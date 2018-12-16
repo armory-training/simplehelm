@@ -1,6 +1,10 @@
 apiVersion: apps/v1beta2
-kind: Deployment
+kind: ReplicaSet
 metadata:
+  {{- if .Values.annotations }}
+  annotations:
+    {{- toYaml .Values.annotations | trim | nindent 4 }}
+{{- end }}
   namespace: {{ .Release.Namespace }}
   name: {{ template "simplehelm.fullname" . }}
   labels:
