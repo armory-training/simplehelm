@@ -1,2 +1,2 @@
 #!/bin/bash
-tar cvzf simplehelm-${BRANCH_NAME}-${GIT_HASH}.tgz -C chart/ .
+tar cvzf simplehelm-${BRANCH_NAME}-${GIT_HASH}.tgz -C chart/simplehelm/ .
