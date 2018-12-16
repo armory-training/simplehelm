@@ -30,7 +30,7 @@ ingress:
 
 index: >-
   <h1>Hello</h1>
-  <p>This is not a test</p>
+  <p>This is not a test 1</p>
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
