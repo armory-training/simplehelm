@@ -1,7 +1,11 @@
 #!/bin/bash
 
 aws --profile armory-ps-prod s3 cp simplehelm-${BRANCH_NAME}-${GIT_HASH}.tgz s3://armory-helm-repo/
+aws --profile armory-ps-prod s3 cp values/prod.yaml s3://armory-helm-repo/values/prod-${BRANCH_NAME}-${GIT_HASH}.yml
+aws --profile armory-ps-prod s3 cp values/dev.yaml s3://armory-helm-repo/values/dev-${BRANCH_NAME}-${GIT_HASH}.yml
 
 cat << EOF > build.properties
 filename=simplehelm-${BRANCH_NAME}-${GIT_HASH}.tgz
+prod=prod-${BRANCH_NAME}-${GIT_HASH}.yml
+dev=dev-${BRANCH_NAME}-${GIT_HASH}.yml
 EOF
