@@ -154,7 +154,11 @@
           "source": "artifact",
           "type": "deployManifest"
         },
-        {{ module "manualjudgement.stage.module" "requisiteStageRefIds" ["3"] "refId" 4 }},
+        {{
+            module "manualjudgement.stage.module" 
+                   "requisiteStageRefIds" ["3"]
+                   "refId" 4 
+        }},
         {
           "account": "eks-ps-prod",
           "cloudProvider": "kubernetes",
