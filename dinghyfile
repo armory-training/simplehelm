@@ -1,0 +1,203 @@
+{
+  "application": "training",
+  "pipelines": [
+    {
+      "application": "training",
+      "keepWaitingPipelines": false,
+      "limitConcurrent": true,
+      "name": "Made By Armory Pipeline Templates",
+      "appConfig": {},
+      "expectedArtifacts": [
+        {
+          "defaultArtifact": {
+            "kind": "default.s3",
+            "name": "s3://armory-helm-repo/${trigger['properties']['filename']}",
+            "reference": "s3://armory-helm-repo/${trigger['properties']['filename']}",
+            "type": "s3/object"
+          },
+          "id": "49fe513e-2c93-4a86-850b-bfd13c91cc0e",
+          "matchArtifact": {
+            "kind": "s3",
+            "name": "s3://armory-helm-repo/${trigger['properties']['filename']}",
+            "type": "s3/object"
+          },
+          "useDefaultArtifact": true,
+          "usePriorExecution": false
+        },
+        {
+          "defaultArtifact": {
+            "kind": "default.s3",
+            "name": "s3://armory-helm-repo/values/${trigger['properties']['dev']}",
+            "reference": "s3://armory-helm-repo/values/${trigger['properties']['dev']}",
+            "type": "s3/object"
+          },
+          "id": "e26d29f5-1da5-4017-a8c3-593827365fbc",
+          "matchArtifact": {
+            "kind": "s3",
+            "name": "s3://armory-helm-repo/values/${trigger['properties']['dev']}",
+            "type": "s3/object"
+          },
+          "useDefaultArtifact": true,
+          "usePriorExecution": false
+        },
+        {
+          "defaultArtifact": {
+            "kind": "default.s3",
+            "name": "s3://armory-helm-repo/values/${trigger['properties']['prod']}",
+            "reference": "s3://armory-helm-repo/values/${trigger['properties']['prod']}",
+            "type": "s3/object"
+          },
+          "id": "96f3c922-b58d-491d-8ccd-2001c2cc9e01",
+          "matchArtifact": {
+            "kind": "s3",
+            "name": "s3://armory-helm-repo/values/${trigger['properties']['prod']}",
+            "type": "s3/object"
+          },
+          "useDefaultArtifact": true,
+          "usePriorExecution": false
+        }
+      ],
+      "keepWaitingPipelines": false,
+      "lastModifiedBy": "bpowell",
+      "limitConcurrent": true,
+      "roles": [
+        "armory-training",
+        "superadmins"
+      ],
+      "serviceAccount": "helm-trigger@managed-service-account",
+      "stages": [
+        {
+          "expectedArtifacts": [
+            {
+              "defaultArtifact": {
+                "kind": "custom"
+              },
+              "id": "f305c097-8245-41a6-b24d-6ec003f57aea",
+              "matchArtifact": {
+                "kind": "base64",
+                "name": "simplehelm-dev",
+                "type": "embedded/base64"
+              },
+              "useDefaultArtifact": false,
+              "usePriorExecution": false
+            }
+          ],
+          "inputArtifacts": [
+            {
+              "account": "s3-ps-prod",
+              "id": "49fe513e-2c93-4a86-850b-bfd13c91cc0e"
+            },
+            {
+              "account": "s3-ps-prod",
+              "id": "e26d29f5-1da5-4017-a8c3-593827365fbc"
+            }
+          ],
+          "name": "Bake Dev (Manifest)",
+          "namespace": "dev-blah-ns",
+          "outputName": "simplehelm-dev",
+          "overrides": {},
+          "refId": "1",
+          "requisiteStageRefIds": [],
+          "templateRenderer": "HELM2",
+          "type": "bakeManifest"
+        },
+        {
+          "expectedArtifacts": [
+            {
+              "defaultArtifact": {},
+              "id": "3adcc795-a2ba-4d51-b2b8-fd99c8441ab1",
+              "matchArtifact": {
+                "kind": "base64",
+                "name": "simplehelm-prod",
+                "type": "embedded/base64"
+              },
+              "useDefaultArtifact": false
+            }
+          ],
+          "inputArtifacts": [
+            {
+              "account": "s3-ps-prod",
+              "id": "49fe513e-2c93-4a86-850b-bfd13c91cc0e"
+            },
+            {
+              "account": "s3-ps-prod",
+              "id": "96f3c922-b58d-491d-8ccd-2001c2cc9e01"
+            }
+          ],
+          "name": "Bake  Prod (Manifest)",
+          "namespace": "prod-blah-ns",
+          "outputName": "simplehelm-prod",
+          "overrides": {},
+          "refId": "2",
+          "requisiteStageRefIds": [],
+          "templateRenderer": "HELM2",
+          "type": "bakeManifest"
+        },
+        {
+          "account": "eks-ps-dev",
+          "cloudProvider": "kubernetes",
+          "manifestArtifactAccount": "embedded-artifact",
+          "manifestArtifactId": "f305c097-8245-41a6-b24d-6ec003f57aea",
+          "moniker": {
+            "app": "training"
+          },
+          "name": "Deploy (Manifest)",
+          "refId": "3",
+          "relationships": {
+            "loadBalancers": [],
+            "securityGroups": []
+          },
+          "requisiteStageRefIds": [
+            "1",
+            "2"
+          ],
+          "source": "artifact",
+          "type": "deployManifest"
+        },
+        {
+          "failPipeline": true,
+          "instructions": "Should we deploy to prod?",
+          "judgmentInputs": [],
+          "name": "Manual Judgment",
+          "notifications": [],
+          "refId": "4",
+          "requisiteStageRefIds": [
+            "3"
+          ],
+          "type": "manualJudgment"
+        },
+        {
+          "account": "eks-ps-prod",
+          "cloudProvider": "kubernetes",
+          "manifestArtifactAccount": "embedded-artifact",
+          "manifestArtifactId": "3adcc795-a2ba-4d51-b2b8-fd99c8441ab1",
+          "moniker": {
+            "app": "training"
+          },
+          "name": "Deploy (Manifest)",
+          "refId": "5",
+          "relationships": {
+            "loadBalancers": [],
+            "securityGroups": []
+          },
+          "requisiteStageRefIds": [
+            "4"
+          ],
+          "source": "artifact",
+          "type": "deployManifest"
+        }
+      ],
+      "triggers": [
+        {
+          "enabled": true,
+          "job": "armory-training/job/simplehelm/job/master",
+          "master": "jenkins-master",
+          "propertyFile": "build.properties",
+          "runAsUser": "helm-trigger@managed-service-account",
+          "type": "jenkins"
+        }
+      ],
+      "updateTs": "1545005412000"
+    }
+  ]
+}
