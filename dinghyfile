@@ -154,18 +154,7 @@
           "source": "artifact",
           "type": "deployManifest"
         },
-        {
-          "failPipeline": true,
-          "instructions": "Should we deploy to prod?",
-          "judgmentInputs": [],
-          "name": "Manual Judgment",
-          "notifications": [],
-          "refId": "4",
-          "requisiteStageRefIds": [
-            "3"
-          ],
-          "type": "manualJudgment"
-        },
+        {{ module manualjudgement.stage.module "requisiteStageRefIds" ["3"] "refId" 4 }},
         {
           "account": "eks-ps-prod",
           "cloudProvider": "kubernetes",
