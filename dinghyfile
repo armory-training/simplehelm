@@ -5,7 +5,7 @@
       "application": "training",
       "keepWaitingPipelines": false,
       "limitConcurrent": true,
-      "name": "Made By Armory Pipeline Templates",
+      "name": "helm trigger",
       "appConfig": {},
       "expectedArtifacts": [
         {
