@@ -29,7 +29,7 @@ ingress:
   #      - chart-example.local
 
 index: >-
-  <h1>Hello</h1>
+  <h1>Hello Canada</h1>
   <p>Welcome To Armory Training!</p>
 
 resources: {}
