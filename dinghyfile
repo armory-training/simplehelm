@@ -155,7 +155,7 @@
           "type": "deployManifest"
         },
         {{ module "manualjudgement.stage.module" "requisiteStageRefIds" ["3"] "refId" "4" }},
-        {{ module "wait.stage.module" "requisiteStageRefIds" ["3"] "refId" "6" "waitTime" 10 }},
+        {{ module "wait.stage.module" "requisiteStageRefIds" ["3"] "refId" "6" "waitTime" 100 }},
         {
           "account": "eks-ps-prod",
           "cloudProvider": "kubernetes",
