@@ -5,7 +5,7 @@
       "application": "training",
       "keepWaitingPipelines": false,
       "limitConcurrent": true,
-      "name": "helm trigger - simplehelm repo (Managed by Dinghy)",
+      "name": "helm trigger - simplehelm repo (Managed by Dinghy!)",
       "appConfig": {},
       "expectedArtifacts": [
         {
