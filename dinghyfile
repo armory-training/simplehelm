@@ -183,7 +183,7 @@
           "job": "armory-training/job/simplehelm/job/master",
           "master": "jenkins-master",
           "propertyFile": "build.properties",
-          "runAsUser": "helm-trigger@managed-service-account",
+          "//runAsUser": "helm-trigger@managed-service-account",
           "type": "jenkins"
         }
       ],
