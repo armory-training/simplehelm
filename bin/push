@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 aws --profile armory-ps-prod s3 cp simplehelm-${BRANCH_NAME}-${GIT_HASH}.tgz s3://armory-helm-repo/
 aws --profile armory-ps-prod s3 cp values/prod.yaml s3://armory-helm-repo/values/prod-${BRANCH_NAME}-${GIT_HASH}.yml
