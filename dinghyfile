@@ -5,7 +5,7 @@
       "application": "training",
       "keepWaitingPipelines": false,
       "limitConcurrent": true,
-      "name": "helm trigger - simplehelm (Managed by Dinghy™️ 😀",
+      "name": "helm trigger - simplehelm (Managed by Dinghy",
       "appConfig": {},
       "expectedArtifacts": [
         {
