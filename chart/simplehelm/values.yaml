@@ -29,8 +29,8 @@ ingress:
   #      - chart-example.local
 
 index: >-
-  <h1>Hello Canada</h1>
-  <p>Welcome To Armory Training!</p>
+  <h1>Hello World</h1>
+  <p>Welcome To Armory Spinnaker!</p>
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
