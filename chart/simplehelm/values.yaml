@@ -31,6 +31,7 @@ ingress:
 index: >-
   <h1>Hello World</h1>
   <p>Welcome To Spinnaker Meetup!</p>
+  <h2>We are here doing Spinnaker!</h2>
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
