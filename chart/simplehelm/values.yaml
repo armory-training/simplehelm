@@ -30,7 +30,7 @@ ingress:
 
 index: >-
   <h1>Hello World</h1>
-  <p>Welcome To Spinnaker Meetup!</p>
+  <p>Welcome To Spinnaker Webinar!</p>
   <h2>We are here doing Spinnaker!</h2>
 
 resources: {}
