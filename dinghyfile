@@ -163,6 +163,7 @@
         },
         {{ module "manualjudgement.stage.module" "requisiteStageRefIds" ["deploy-dev"] "refId" "hmmmmmmm-wait" }},
         {{ module "wait.stage.module" "requisiteStageRefIds" ["deploy-dev"] "refId" "wait-long-time" "waitTime" 999 }},
+        {{ module "wait.stage.module" "requisiteStageRefIds" ["deploy-dev"] "refId" "wait-long-time-2" "waitTime" 500 }},
         {
           "account": "eks-ps-prod",
           "cloudProvider": "kubernetes",
