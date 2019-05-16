@@ -132,7 +132,7 @@
             }
           ],
           "name": "Bake Prod (Manifest)",
-          "namespace": "prod-blah-ns",
+          "namespace": "helm-trigger-simplehelm-prod",
           "outputName": "simplehelm-prod",
           "overrides": {},
           "refId": "bake-prod",
