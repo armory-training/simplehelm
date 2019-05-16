@@ -178,7 +178,7 @@
             "securityGroups": []
           },
           "requisiteStageRefIds": [
-            "manual-judgment-stage"
+            "hmmmmmmm-wait"
           ],
           "source": "artifact",
           "type": "deployManifest"
