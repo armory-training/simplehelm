@@ -148,8 +148,8 @@
           "moniker": {
             "app": "training"
           },
-          "name": "Deploy (Manifest)",
-          "refId": "my-customer-",
+          "name": "Deploy dev (Manifest)",
+          "refId": "deploy-dev",
           "relationships": {
             "loadBalancers": [],
             "securityGroups": []
@@ -171,7 +171,7 @@
           "moniker": {
             "app": "training"
           },
-          "name": "Deploy (Manifest)",
+          "name": "Deploy Prod (Manifest)",
           "refId": "5",
           "relationships": {
             "loadBalancers": [],
