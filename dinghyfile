@@ -161,7 +161,7 @@
           "source": "artifact",
           "type": "deployManifest"
         },
-        {{ module "manualjudgement.stage.module" "requisiteStageRefIds" ["deploy-dev"] "refId" "manual-judgment-stage" }},
+        {{ module "manualjudgement.stage.module" "requisiteStageRefIds" ["deploy-dev"] "refId" "hmmmmmmm-wait" }},
         {{ module "wait.stage.module" "requisiteStageRefIds" ["deploy-dev"] "refId" "wait-forever" "waitTime" 999 }},
         {
           "account": "eks-ps-prod",
