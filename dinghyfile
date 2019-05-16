@@ -161,7 +161,7 @@
           "source": "artifact",
           "type": "deployManifest"
         },
-        {{ module "manualjudgement.stage.module" "requisiteStageRefIds" ["3"] "refId" "4" }},
+        {{ module "manualjudgement.stage.module" "requisiteStageRefIds" ["3"] "refId" "manual-judgment-stage" }},
         {{ module "wait.stage.module" "requisiteStageRefIds" ["3"] "refId" "6" "waitTime" 999 }},
         {
           "account": "eks-ps-prod",
@@ -178,7 +178,7 @@
             "securityGroups": []
           },
           "requisiteStageRefIds": [
-            "4"
+            "manual-judgment-stage"
           ],
           "source": "artifact",
           "type": "deployManifest"
