@@ -103,7 +103,7 @@
           "namespace": "dev-blah-ns",
           "outputName": "simplehelm-dev",
           "overrides": {},
-          "refId": "1",
+          "refId": "bake-dev",
           "requisiteStageRefIds": [],
           "templateRenderer": "HELM2",
           "type": "bakeManifest"
@@ -155,7 +155,7 @@
             "securityGroups": []
           },
           "requisiteStageRefIds": [
-            "1",
+            "bake-dev",
             "2"
           ],
           "source": "artifact",
@@ -172,7 +172,7 @@
             "app": "training"
           },
           "name": "Deploy Prod (Manifest)",
-          "refId": "5",
+          "refId": "deploy-prod",
           "relationships": {
             "loadBalancers": [],
             "securityGroups": []
