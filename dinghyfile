@@ -100,7 +100,7 @@
             }
           ],
           "name": "Bake Dev (Manifest)",
-          "namespace": "helm-trigger-simplehelm",
+          "namespace": "helm-trigger-simplehelm-dev",
           "outputName": "simplehelm-dev",
           "overrides": {},
           "refId": "bake-dev",
