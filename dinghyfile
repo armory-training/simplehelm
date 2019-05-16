@@ -6,6 +6,11 @@
       "keepWaitingPipelines": false,
       "limitConcurrent": true,
       "name": "helm trigger - simplehelm repo (Managed by Dinghy!)",
+      "locked": {
+        "allowUnlockUi": true,
+        "description": "see dinghyfile: https://github.com/armory-training/simplehelm/blob/master/dinghyfile",
+        "ui": true
+      },
       "appConfig": {},
       "expectedArtifacts": [
         {
