@@ -16,6 +16,7 @@
         "armory-training",
         "superadmins"
       ],
+      "index": 25,
       "serviceAccount": "helm-trigger@managed-service-account",
       "appConfig": {},
       "expectedArtifacts": [
