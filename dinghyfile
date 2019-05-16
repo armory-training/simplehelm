@@ -4,10 +4,10 @@
     {
       "//exampleComment": "this is how to to use json commenting",
       "application": "training",
+      "description": "view the dinghyfile: https://github.com/armory-training/simplehelm/blob/master/dinghyfile",
       "keepWaitingPipelines": false,
       "limitConcurrent": true,
       "name": "helm trigger - simplehelm repo (Managed by Dinghy ⛵️!)",
-      "description": "view the dinghyfile: https://github.com/armory-training/simplehelm/blob/master/dinghyfile",
       "locked": {
         "allowUnlockUi": true,
         "ui": true
