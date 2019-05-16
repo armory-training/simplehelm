@@ -27,7 +27,7 @@
             "reference": "s3://armory-helm-repo/${trigger['properties']['filename']}",
             "type": "s3/object"
           },
-          "displayName": "s3://armory-helm-repo/${trigger['properties']['filename']}",
+          "displayName": "helm-tarball",
           "id": "49fe513e-2c93-4a86-850b-bfd13c91cc0e",
           "matchArtifact": {
             "kind": "s3",
@@ -44,7 +44,7 @@
             "reference": "s3://armory-helm-repo/values/${trigger['properties']['dev']}",
             "type": "s3/object"
           },
-          "displayName": "s3://armory-helm-repo/values/${trigger['properties']['dev']}",
+          "displayName": "dev-values.yml",
           "id": "e26d29f5-1da5-4017-a8c3-593827365fbc",
           "matchArtifact": {
             "kind": "s3",
@@ -61,7 +61,7 @@
             "reference": "s3://armory-helm-repo/values/${trigger['properties']['prod']}",
             "type": "s3/object"
           },
-          "displayName": "s3://armory-helm-repo/values/${trigger['properties']['prod']}",
+          "displayName": "prod-values.yml",
           "id": "96f3c922-b58d-491d-8ccd-2001c2cc9e01",
           "matchArtifact": {
             "kind": "s3",
