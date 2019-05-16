@@ -22,7 +22,6 @@
       "expectedArtifacts": [
         {
           "defaultArtifact": {
-            "kind": "default.s3",
             "name": "s3://armory-helm-repo/${trigger['properties']['filename']}",
             "reference": "s3://armory-helm-repo/${trigger['properties']['filename']}",
             "type": "s3/object"
@@ -39,7 +38,6 @@
         },
         {
           "defaultArtifact": {
-            "kind": "default.s3",
             "name": "s3://armory-helm-repo/values/${trigger['properties']['dev']}",
             "reference": "s3://armory-helm-repo/values/${trigger['properties']['dev']}",
             "type": "s3/object"
@@ -56,7 +54,6 @@
         },
         {
           "defaultArtifact": {
-            "kind": "default.s3",
             "name": "s3://armory-helm-repo/values/${trigger['properties']['prod']}",
             "reference": "s3://armory-helm-repo/values/${trigger['properties']['prod']}",
             "type": "s3/object"
