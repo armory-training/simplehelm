@@ -149,7 +149,7 @@
             "app": "training"
           },
           "name": "Deploy (Manifest)",
-          "refId": "3",
+          "refId": "my-customer-",
           "relationships": {
             "loadBalancers": [],
             "securityGroups": []
